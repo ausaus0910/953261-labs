@@ -11,13 +11,18 @@ export function menuNames(menu) {
   // TODO
   const names = menu.map((menuName) => menuName.name);
   // const names = menu.map(({name}) => `${name}`)
-  console.log(names);
+  return names;
 }
 
 // Task 2 — filter
 // Return only the items whose `available` is true.
 export function availableItems(menu) {
   // TODO
+  const availableItems = menu.filter((bool) => 
+    bool.available === true
+  );
+  return availableItems;
+    
 }
 
 // Task 3 — find
@@ -25,6 +30,8 @@ export function availableItems(menu) {
 // findItem(menu, "F01") → { id: "F01", name: "Khao Soi", ... }
 export function findItem(menu, id) {
   // TODO
+  const findItems = menu.find((item) => item.id === id);
+  return findItems;
 }
 
 // Task 4 — filter + map
@@ -32,6 +39,11 @@ export function findItem(menu, id) {
 // availableIn(menu, "dessert") → ["Mango Sticky Rice", "Coconut Ice Cream"]
 export function availableIn(menu, category) {
   // TODO
+  const availableIN = menu
+    .filter((items) => items.available && items.category === category)
+    .map((items) => items.name);
+  return availableIN;
+  
 }
 
 // Task 5 — template literal + destructuring
@@ -41,6 +53,8 @@ export function availableIn(menu, category) {
 // Hint: start with  const { name, price, available } = item;
 export function menuLine(item) {
   // TODO
+  const {name, price, available} = item;
+  return `${name} — ${price} THB${available ? "" : " (sold out)"}`;
 }
 
 // Task 6 — spread
@@ -49,6 +63,11 @@ export function menuLine(item) {
 // withDiscount({ ..., price: 45 }, 10) → { ..., price: 41 }   (45 × 0.9 = 40.5 → 41)
 export function withDiscount(item, percent) {
   // TODO
+  return{
+    ...item,
+    price: Math.round(
+      item.price * (100 - percent) / 100),
+  };
 }
 
 // Task 7 — reduce + find
@@ -56,14 +75,22 @@ export function withDiscount(item, percent) {
 // Each line costs  (price of that menu item) × qty.
 // orderTotal(orders[0], menu) → 160   (2 × 45 + 1 × 70)
 export function orderTotal(order, menu) {
-  // TODO
+  // TODO 
+  return order.items.reduce((total, line) => {
+    const item = menu.find((menuItem) => menuItem.id === line.menuId);
+    return total + item.price * line.qty; // calculate the total price
+  }, 0);
 }
 
 // Task 8 — map + reduce   (this is quiz Q10 again!)
 // Return the average order total, rounded to 2 decimal places.
 // Return 0 when there are no orders.
 export function averageOrder(orders, menu) {
-  // TODO
+  if (orders.length === 0) return 0;
+  const total = orders
+    .map((order) => orderTotal(order, menu))
+    .reduce((sum, orderTotal) => sum + orderTotal, 0);
+  return Math.round((total / orders.length) * 100) / 100;
 }
 
 // ───────────── Stretch (optional) ─────────────
