@@ -30,7 +30,7 @@ const server = http.createServer((req, res) => {
       favLanguage: "English"
     }
     res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
-    res.end(JSON.stringify(profile));
+    res.end(JSON.stringify(profile)); // stringify converts JS value to JSON text
     return;
   }
   // TODO: replace this with a proper 404 response
