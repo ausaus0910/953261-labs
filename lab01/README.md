@@ -2,9 +2,9 @@
 
 | | |
 |---|---|
-| **Name** | _your full name_ |
-| **Nickname** | _your nickname_ |
-| **Student ID** | _6xxxxxxxx_ |
+| **Name** | _Pongsapat Tonngern_ |
+| **Nickname** | _Maioak_ |
+| **Student ID** | _692115030_ |
 | **Section** | 701 |
 
 ## How to run

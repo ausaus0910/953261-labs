@@ -33,9 +33,8 @@ const server = http.createServer((req, res) => {
     res.end(JSON.stringify(profile)); // stringify converts JS value to JSON text
     return;
   }
-  // TODO: replace this with a proper 404 response
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("404 Not Found");
+  res.writeHead(404, { "Content-Type": "text/html; charset=utf-8" });
+  res.end("404 NOT FOUND!");
 });
 
 server.listen(PORT, () => console.log(`Running at http://localhost:${PORT}`));
