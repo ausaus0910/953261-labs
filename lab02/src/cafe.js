@@ -105,3 +105,13 @@ export function bestSeller(orders, menu) {
 export function namesByCategory(menu) {
   // TODO
 }
+
+// My Own Function (Part D)
+export const itemsByTag = (menu, tag) => {
+  const itemsTag = menu
+    .filter((menuTag) => menuTag.tags.includes(tag)); // check if the tag paremeter really in menu tags object
+  
+    return itemsTag.forEach((menuItem) => {
+    console.log(menuLine(menuItem));
+  });;
+}

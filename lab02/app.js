@@ -2,7 +2,7 @@
 // Run:  npm start
 import { menu } from "./data/menu.js";
 import { orders } from "./data/orders.js";
-import { menuLine, orderTotal, averageOrder, availableItems, findItem } from "./src/cafe.js";
+import { menuLine, orderTotal, averageOrder, availableItems, findItem, itemsByTag } from "./src/cafe.js";
 
 console.log("=== Kad Café menu ===");
 // menu.forEach((item) => console.log(menuLine(item)));
@@ -25,6 +25,7 @@ const avgOrder = averageOrder(orders, menu);
 
 console.log(`Orders: ${orders.length}`);
 console.log(`Total sales: ${totalSales} THB`)
-console.log(`Average order: ${avgOrder} THB`)
+console.log(`Average order: ${avgOrder} THB\n`)
 
 // TODO (Part D): print the result of your own function (see the lab sheet).
+itemsByTag(menu, "coffee");
