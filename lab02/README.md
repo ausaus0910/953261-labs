@@ -1,11 +1,11 @@
 # 953261 Lab 2 — Kad Café (Modern JavaScript)
 
-| | |
-|---|---|
-| **Name** | _Pongsapat Tonngern_ |
-| **Nickname** | _Maioak_ |
-| **Student ID** | _692115030_ |
-| **Section** | 701 |
+|                      |                        |
+| -------------------- | ---------------------- |
+| **Name**       | _Pongsapat Tonngern_ |
+| **Nickname**   | _Maioak_             |
+| **Student ID** | _692115030_          |
+| **Section**    | 701                    |
 
 ## How to run
 
@@ -18,8 +18,7 @@ npm start        # Part D — the daily report
 
 ## My own function (Part D)
 
-_Name of your function, what it returns, and which array methods it uses.
-_My function, itemsByTag, returns a new array of menu items that have the requested tag. It uses the filter and includes array methods._
+My function, itemsByTag, returns a new array of menu items that have the requested tag. It uses the filter and includes array methods.
 
 ## What I learned today
 
